@@ -54,7 +54,7 @@
     {
       "id": "step-2-agents",
       "title": "Multi-Agent Architecture",
-      "description": "The heart of ZeroLeaks is its multi-agent system. The Scan Engine orchestrates a team of specialized agents:\n\n- **Strategist** — Selects attack strategies based on defense analysis\n- **Attacker** — Generates attack prompts using the Tree of Attacks pattern\n- **Evaluator** — Assesses whether attacks extracted sensitive content\n- **Mutator** — Evolves failed attacks into more effective variants\n- **Inspector** — TombRaider-inspired defense fingerprinting agent\n- **Orchestrator** — Coordinates multi-turn attack sequences (Siren, Echo Chamber)\n- **Target** — Wraps the LLM being tested\n- **Injection Evaluator** — Specialized evaluator for prompt injection tests",
+      "description": "The heart of ZeroLeaks is its multi-agent system. The Scan Engine orchestrates a team of specialized agents:\n\nStrategist selects attack strategies based on defense analysis. Attacker generates attack prompts using the Tree of Attacks pattern. Evaluator assesses whether attacks extracted sensitive content. Mutator evolves failed attacks into more effective variants. Inspector is a TombRaider-inspired defense fingerprinting agent. Orchestrator coordinates multi-turn attack sequences (Siren, Echo Chamber). Target wraps the LLM being tested. Injection Evaluator is a specialized evaluator for prompt injection tests.",
       "estimatedTime": 120,
       "focusDirectory": "src/agents",
       "highlightLayers": [
@@ -120,7 +120,7 @@
     {
       "id": "step-3-probes",
       "title": "Attack Probe Library",
-      "description": "Probes are pre-crafted attack prompts organized by technique category. ZeroLeaks ships with 15+ categories of attack probes covering the full spectrum of LLM exploitation:\n\n- **direct / social / persona** — Classic prompt extraction techniques\n- **encoding** — Base64, ROT13, Unicode bypass attacks\n- **modern** — Crescendo, Many-Shot, CoT Hijack, Policy Puppetry\n- **hybrid** — XSS/CSRF-style combined attacks\n- **tool-exploits** — MCP and tool-calling exploitation\n- **garak-inspired** — Probes based on NVIDIA's Garak scanner\n- **injection** — Full prompt injection test suite\n\nThe probe index aggregates all categories and provides query functions for selecting probes by category, defense level, or attack phase.",
+      "description": "Probes are pre-crafted attack prompts organized by technique category. ZeroLeaks ships with 15+ categories of attack probes covering the full spectrum of LLM exploitation:\n\ndirect, social, and persona cover classic prompt extraction techniques. encoding covers Base64, ROT13, and Unicode bypass attacks. modern includes Crescendo, Many-Shot, CoT Hijack, and Policy Puppetry. hybrid covers XSS/CSRF-style combined attacks. tool-exploits covers MCP and tool-calling exploitation. garak-inspired contains probes based on NVIDIA's Garak scanner. injection is the full prompt injection test suite.\n\nThe probe index aggregates all categories and provides query functions for selecting probes by category, defense level, or attack phase.",
       "estimatedTime": 90,
       "focusDirectory": "src/probes",
       "highlightLayers": [
@@ -168,7 +168,7 @@
     {
       "id": "step-4-knowledge",
       "title": "Research Knowledge Base",
-      "description": "The knowledge module contains research-backed security intelligence that powers the scanner's effectiveness:\n\n- **techniques.ts** — Documented attack techniques from CVEs and academic papers (EchoLeak, TAP, PAIR, Crescendo, TombRaider, Siren, and more)\n- **payloads.ts** — Proven payload templates for extraction, bypass, context injection, and instruction override\n- **exfiltration.ts** — Data exfiltration vectors including image-based, link-based, and encoded response methods\n- **defense-bypass.ts** — Methods for bypassing known defense systems (Prompt Shield, Llama Guard, NeMo Guardrails, etc.)",
+      "description": "The knowledge module contains research-backed security intelligence that powers the scanner's effectiveness.\n\ntechniques.ts contains documented attack techniques from CVEs and academic papers (EchoLeak, TAP, PAIR, Crescendo, TombRaider, Siren, and more). payloads.ts has proven payload templates for extraction, bypass, context injection, and instruction override. exfiltration.ts covers data exfiltration vectors including image-based, link-based, and encoded response methods. defense-bypass.ts contains methods for bypassing known defense systems (Prompt Shield, Llama Guard, NeMo Guardrails, etc.).",
       "estimatedTime": 90,
       "focusDirectory": "src/knowledge",
       "highlightLayers": [
@@ -209,7 +209,7 @@
     {
       "id": "step-5-types-and-config",
       "title": "Type System & Configuration",
-      "description": "ZeroLeaks has a rich type system that models the entire security scanning domain. Key types include:\n\n- **ScanConfig / ScanResult** — Core scan configuration and output\n- **AttackNode / AttackStrategy** — Tree of Attacks data structures\n- **DefenseProfile / DefenseFingerprint** — Defense analysis models\n- **MultiTurnSequence** — Multi-turn attack patterns (Siren, Echo Chamber, TombRaider)\n- **Finding / InjectionTestResult** — Vulnerability findings\n\nConfiguration files at the root control the build (tsconfig.json), formatting (biome.jsonc), and package definition (package.json).",
+      "description": "ZeroLeaks has a rich type system that models the entire security scanning domain. Key types include ScanConfig and ScanResult for core scan configuration and output, AttackNode and AttackStrategy for Tree of Attacks data structures, DefenseProfile and DefenseFingerprint for defense analysis models, MultiTurnSequence for multi-turn attack patterns (Siren, Echo Chamber, TombRaider), and Finding and InjectionTestResult for vulnerability findings.\n\nConfiguration files at the root control the build (tsconfig.json), formatting (biome.jsonc), and package definition (package.json).",
       "estimatedTime": 60,
       "focusDirectory": "",
       "highlightLayers": [
@@ -262,7 +262,7 @@
     {
       "id": "step-6-examples",
       "title": "Examples & Getting Started",
-      "description": "The examples directory contains ready-to-run scripts showing how to use ZeroLeaks:\n\n- **basic-scan.ts** — Simple system prompt scan with default settings\n- **custom-engine.ts** — Advanced usage with createScanEngine() for fine-tuned control over tree depth, branching, and attack techniques\n- **probe-library.ts** — Querying and using the probe library directly\n\nTo get started: set your OPENROUTER_API_KEY, then run `zeroleaks scan --prompt \"Your system prompt here\"` or use the programmatic API via `import { runSecurityScan } from 'zeroleaks'`.",
+      "description": "The examples directory contains ready-to-run scripts showing how to use ZeroLeaks.\n\nbasic-scan.ts is a simple system prompt scan with default settings. custom-engine.ts shows advanced usage with createScanEngine() for fine-tuned control over tree depth, branching, and attack techniques. probe-library.ts demonstrates querying and using the probe library directly.\n\nTo get started, set your OPENROUTER_API_KEY, then run zeroleaks scan or use the programmatic API via runSecurityScan from the zeroleaks package.",
       "estimatedTime": 60,
       "focusDirectory": "",
       "highlightLayers": [
