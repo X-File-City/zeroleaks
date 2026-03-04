@@ -262,7 +262,7 @@
     {
       "id": "step-6-examples",
       "title": "Examples & Getting Started",
-      "description": "The examples directory contains ready-to-run scripts showing how to use ZeroLeaks.\n\nbasic-scan.ts is a simple system prompt scan with default settings. custom-engine.ts shows advanced usage with createScanEngine() for fine-tuned control over tree depth, branching, and attack techniques. probe-library.ts demonstrates querying and using the probe library directly.\n\nTo get started, set your OPENROUTER_API_KEY, then run zeroleaks scan or use the programmatic API via runSecurityScan from the zeroleaks package.",
+      "description": "The examples directory contains ready-to-run scripts showing how to use ZeroLeaks.\n\nbasic-scan.ts is a simple system prompt scan with default settings. custom-engine.ts shows advanced usage with createScanEngine() for fine-tuned control over tree depth, branching, and attack techniques. probe-library.ts demonstrates querying and using the probe library directly.",
       "estimatedTime": 60,
       "focusDirectory": "",
       "highlightLayers": [
