@@ -54,7 +54,7 @@
     {
       "id": "step-2-agents",
       "title": "Multi-Agent Architecture",
-      "description": "The heart of ZeroLeaks is its multi-agent system. The Scan Engine orchestrates a team of specialized agents:\n\nStrategist selects attack strategies based on defense analysis. Attacker generates attack prompts using the Tree of Attacks pattern. Evaluator assesses whether attacks extracted sensitive content. Mutator evolves failed attacks into more effective variants. Inspector is a TombRaider-inspired defense fingerprinting agent. Orchestrator coordinates multi-turn attack sequences (Siren, Echo Chamber). Target wraps the LLM being tested. Injection Evaluator is a specialized evaluator for prompt injection tests.",
+      "description": "The Scan Engine orchestrates 8 specialized agents: Strategist, Attacker, Evaluator, Mutator, Inspector, Orchestrator, Target, and Injection Evaluator. Together they plan attacks, generate prompts, assess results, evolve failed attempts, fingerprint defenses, and coordinate multi-turn sequences.",
       "estimatedTime": 120,
       "focusDirectory": "src/agents",
       "highlightLayers": [
@@ -120,7 +120,7 @@
     {
       "id": "step-3-probes",
       "title": "Attack Probe Library",
-      "description": "Probes are pre-crafted attack prompts organized by technique category. ZeroLeaks ships with 15+ categories of attack probes covering the full spectrum of LLM exploitation:\n\ndirect, social, and persona cover classic prompt extraction techniques. encoding covers Base64, ROT13, and Unicode bypass attacks. modern includes Crescendo, Many-Shot, CoT Hijack, and Policy Puppetry. hybrid covers XSS/CSRF-style combined attacks. tool-exploits covers MCP and tool-calling exploitation. garak-inspired contains probes based on NVIDIA's Garak scanner. injection is the full prompt injection test suite.\n\nThe probe index aggregates all categories and provides query functions for selecting probes by category, defense level, or attack phase.",
+      "description": "Pre-crafted attack prompts across 15+ categories. Classic techniques (direct, social, persona, encoding) sit alongside modern research-backed attacks (Crescendo, Many-Shot, CoT Hijack, Policy Puppetry) and specialized probes for hybrid exploits, MCP tool-calling, and prompt injection.",
       "estimatedTime": 90,
       "focusDirectory": "src/probes",
       "highlightLayers": [
@@ -168,7 +168,7 @@
     {
       "id": "step-4-knowledge",
       "title": "Research Knowledge Base",
-      "description": "The knowledge module contains research-backed security intelligence that powers the scanner's effectiveness.\n\ntechniques.ts contains documented attack techniques from CVEs and academic papers (EchoLeak, TAP, PAIR, Crescendo, TombRaider, Siren, and more). payloads.ts has proven payload templates for extraction, bypass, context injection, and instruction override. exfiltration.ts covers data exfiltration vectors including image-based, link-based, and encoded response methods. defense-bypass.ts contains methods for bypassing known defense systems (Prompt Shield, Llama Guard, NeMo Guardrails, etc.).",
+      "description": "Research-backed security intelligence sourced from CVEs and academic papers. Includes documented attack techniques, proven payload templates, data exfiltration vectors, and bypass methods for known defense systems like Prompt Shield, Llama Guard, and NeMo Guardrails.",
       "estimatedTime": 90,
       "focusDirectory": "src/knowledge",
       "highlightLayers": [
@@ -209,7 +209,7 @@
     {
       "id": "step-5-types-and-config",
       "title": "Type System & Configuration",
-      "description": "ZeroLeaks has a rich type system that models the entire security scanning domain. Key types include ScanConfig and ScanResult for core scan configuration and output, AttackNode and AttackStrategy for Tree of Attacks data structures, DefenseProfile and DefenseFingerprint for defense analysis models, MultiTurnSequence for multi-turn attack patterns (Siren, Echo Chamber, TombRaider), and Finding and InjectionTestResult for vulnerability findings.\n\nConfiguration files at the root control the build (tsconfig.json), formatting (biome.jsonc), and package definition (package.json).",
+      "description": "The type system models the full scanning domain: scan config and results, attack trees and strategies, defense profiles and fingerprints, multi-turn sequences, and vulnerability findings. Root-level config files control the build, formatting, and package definition.",
       "estimatedTime": 60,
       "focusDirectory": "",
       "highlightLayers": [
